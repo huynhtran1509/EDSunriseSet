@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/willowtreeapps/EDSunriseSet"
   s.license      = { :type => 'MIT', :file => 'license.txt' }
   s.author       = { "Ernesto García" => "", "Paul Schlyter" => "pausch@stjarnhimlen.se" }
-  s.source       = { :git => "git@github.com:willowtreeapps/EDSunriseSet.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/willowtreeapps/EDSunriseSet.git", :tag => s.version.to_s }
   s.source_files = '*.{h,m}'
   s.requires_arc = true
 end
