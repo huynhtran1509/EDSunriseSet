@@ -6,7 +6,7 @@
 //
 
 //  C/C++ sun calculations created by Paul Schlyter
-//  sunriset.c 
+//  sunriset.c
 //  http://stjarnhimlen.se/english.html
 //  SUNRISET.C - computes Sun rise/set times, start/end of twilight, and
 //  the length of the day at any date and latitude
@@ -178,13 +178,13 @@ static const NSInteger secondsInHour = 3600;
                                                         fromDate:date];
     
     // Calculate sunrise and sunset
-    CGFloat rise = 0.0f;
-    CGFloat set = 0.0f;
+    double rise = 0.0;
+    double set = 0.0;
     [self sunRiseSetForYear:(int)[dateComponents year]
                       month:(int)[dateComponents month]
                         day:(int)[dateComponents day]
-                  longitude:self.longitude
-                   latitude:self.latitude
+                  longitude:(double)self.longitude
+                   latitude:(double)self.latitude
                       trise:&rise
                        tset:&set];
     
@@ -204,15 +204,15 @@ static const NSInteger secondsInHour = 3600;
                                                                   |NSMonthCalendarUnit
                                                                   |NSDayCalendarUnit)
                                                         fromDate:date];
-    CGFloat start = 0.0f;
-    CGFloat end = 0.0f;
+    double start = 0.0;
+    double end = 0.0;
     
     // Civil twilight
     [self civilTwilightForYear:(int)[dateComponents year]
                          month:(int)[dateComponents month]
                            day:(int)[dateComponents day]
-                     longitude:self.longitude
-                      latitude:self.latitude
+                     longitude:(double)self.longitude
+                      latitude:(double)self.latitude
                          trise:&start
                           tset:&end];
     self.civilTwilightStart = [self utcTime:dateComponents
@@ -224,8 +224,8 @@ static const NSInteger secondsInHour = 3600;
     [self nauticalTwilightForYear:(int)[dateComponents year]
                             month:(int)[dateComponents month]
                               day:(int)[dateComponents day]
-                        longitude:self.longitude
-                         latitude:self.latitude
+                        longitude:(double)self.longitude
+                         latitude:(double)self.latitude
                             trise:&start
                              tset:&end];
     self.nauticalTwilightStart = [self utcTime:dateComponents
@@ -237,8 +237,8 @@ static const NSInteger secondsInHour = 3600;
     [self astronomicalTwilightForYear:(int)[dateComponents year]
                                 month:(int)[dateComponents month]
                                   day:(int)[dateComponents day]
-                            longitude:self.longitude
-                             latitude:self.latitude
+                            longitude:(double)self.longitude
+                             latitude:(double)self.latitude
                                 trise:&start
                                  tset:&end];
     self.astronomicalTwilightStart = [self utcTime:dateComponents
@@ -255,14 +255,14 @@ static const NSInteger secondsInHour = 3600;
                                                                   |NSMonthCalendarUnit
                                                                   |NSDayCalendarUnit)
                                                         fromDate:date];
-    CGFloat start = 0.0f;
-    CGFloat end = 0.0f;
+    double start = 0.0;
+    double end = 0.0;
     
     [self goldenHourForYear:(int)[dateComponents year]
                       month:(int)[dateComponents month]
                         day:(int)[dateComponents day]
-                  longitude:self.longitude
-                   latitude:self.latitude
+                  longitude:(double)self.longitude
+                   latitude:(double)self.latitude
                       trise:&end
                        tset:&start];
     self.goldenHourStart = [self utcTime:dateComponents
