@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "EDSunriseSet"
-  s.version      = "0.0.2"
+  s.version      = “0.1.0”
   s.summary      = "Objective-C class to calculate Sunrise/Sunset/Twilight times."
   s.description  = <<-DESC
                     EDSunriseSet is an Objective-C wrapper for the C languages routines created by Paul Schlyter.
@@ -8,10 +8,12 @@ Pod::Spec.new do |s|
 
                       - Calculates Sunrise/Sunset times
                       - Calculates Civil/Nautical/Astronomical twilight
+                      - Calculates Golden Hour times
                     DESC
-  s.homepage     = "https://github.com/erndev/EDSunriseSet"
+  s.homepage     = "https://github.com/willowtreeapps/EDSunriseSet"
   s.license      = { :type => 'MIT', :file => 'license.txt' }
   s.author       = { "Ernesto García" => "", "Paul Schlyter" => "pausch@stjarnhimlen.se" }
-  s.source       = { :git => "https://github.com/erndev/EDSunriseSet.git", :tag => s.version.to_s }
+  s.source       = { :git => "git@github.com:willowtreeapps/EDSunriseSet.git", :tag => s.version.to_s }
   s.source_files = '*.{h,m}'
+  s.requires_arc = true
 end
